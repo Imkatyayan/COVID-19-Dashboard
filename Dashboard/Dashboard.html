@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="utf-8">
+    <link rel="stylesheet" href="Dashboard-style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="animate.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Cases'],
+          ['Germany', 176450],
+          ['United States', 1509422],
+          ['Brazil', 233511],
+          ['Canada', 75864],
+          ['France', 179365],
+            ['Itlay', 224760],
+            ['Spain', 277719],
+            ['Switzerland', 30587],
+            ['United Kingdom', 240161],
+            ['Turkey', 148067],
+            ['Iraq', 3260],
+            ['Saudi Arabia', 54752],
+            ['Iran', 120198],
+            ['Israiel', 16607],
+            ['Afganistan', 6664],
+            ['Pakistan', 40151],
+            ['Bangladesh', 22268],
+            ['Nepal', 292],
+            ['Sri Lanka', 960],
+            ['China', 82947],
+            ['Mayanmar', 600],
+            ['South Korea', 11050],
+            ['North Korea', 0],
+            ['Taiwan', 600],
+            ['Indonesia', 17514],
+            ['Japan', 16237],
+            ['Peru', 88541],
+            ['Colombia', 14939],
+            ['Chile', 41428],
+            ['Thailand', 3028],
+            ['Singapore', 28038],
+            ['South Africa', 15515],
+            ['Egypt', 12229],
+            ['Algeria', 7019],
+            ['Morocco', 6870],
+            ['Nigeria', 5959],
+            ['Ghana', 5735],
+            ['Sudan', 2289],
+            ['Guinea', 2658],
+            ['UAE', 23358],
+            ['Kuwait', 14850],
+            ['Australia', 7054],
+             ['New Zeland', 1149],
+             ['India', 95698],
+          ['Russia', 281752]
+        ]);
+
+        var options = { colorAxis: {colors: ['white', 'red']} };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['State', 'Cases'],
+          ['Maharashtra',   30706],
+          ['Tamil Nadu',    11224],
+          ['Gujrat',  10989],
+          ['Delhi', 9455],
+            ['Rajasthan', 5083],
+            ['Madhya Pradesh', 4790],
+            ['Uttar Pradesh', 4258],
+             ['Andhra Pradesh', 2380],
+             ['Punjab', 2073],
+          ['West Bengal',    2667]
+        ]);
+
+        var options = {
+          title: 'Most affected States',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+           ['Month', 'Active ', ' Recovered', 'Death', 'Total',],
+          ['10/05/2020',  41472,      19358,         2109,     62939, ],
+          ['11/05/2020',  44029,      20917,         2206,     67152, ],
+          ['12/05/2020',  46008,      22455,         2293,     70756, ],
+          ['13/05/2020',  47480,      24386,         2415,     74281, ],
+          ['14/05/2020',  49219,      26235,          549,     78003, ],
+          ['15/05/2020',  51401,        27920,      2649,       81970, ],
+          ['16/05/2020',  53035,        30153,     2752,       85940, ],
+          ['17/05/2020',  53946,         34109,    2872,       90927,]
+        ]);
+
+        var options = {
+          title : 'COVID-19 Cases Update',
+          vAxis: {title: 'Cases'},
+          hAxis: {title: 'Day'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <script>
+        google.load('visualization', '1', {'packages': ['geochart']});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  var data = google.visualization.arrayToDataTable([
+    ['State', 'Confirmed Cases'],
+    ['Uttar Pradesh', 4258],
+    ['Maharashtra', 30706],
+    ['Bihar', 1251],
+    ['West Bengal', 2677],
+    ['Madhya Pradesh', 4790],
+    ['Tamil Nadu', 11224],
+    ['Rajasthan', 5083],
+    ['Karnataka', 1146],
+    ['Gujarat', 10989],
+    ['Andhra Pradesh', 2380],
+    ['Odisha', 828],
+    ['Telangana', 1509],
+    ['Kerala', 602],
+    ['Jharkhand', 217],
+    ['Assam', 98],
+    ['Punjab', 2073],
+    ['Chhattisgarh', 67],
+    ['Haryana', 910],
+    ['Jammu and Kashmir', 1121],
+    ['Uttarakhand', 92],
+    ['Himachal Pradesh', 78],
+    ['Tripura', 167],
+    ['Meghalaya', 13],
+    ['Manipur', 7],
+    ['Nagaland', 0],
+    ['Goa', 20],
+    ['Arunachal Pradesh', 1],
+    ['Mizoram', 1],
+    ['Sikkim', 0],
+    ['Delhi', 9755],
+    ['Puducherry', 16],
+    ['Chandigarh', 191],
+    ['Andaman and Nicobar Islands', 33],
+    ['Dadra and Nagar Haveli', 1],
+    ['Daman and Diu', 1],
+        ['Delhi', 9755],
+    ['Lakshadweep', 0]
+  ]);
+  
+  var opts = {
+      colorAxis: {colors: ['white', 'red']},
+    region: 'IN',
+    displayMode: 'regions',
+    resolution: 'provinces',
+    width: 640, 
+    height: 480
+  };
+  var geochart = new google.visualization.GeoChart(
+      document.getElementById('visualization'));
+  geochart.draw(data, opts);
+};
+    </script>
+    
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'Salary');
+        data.addColumn('boolean', 'Full Time Employee');
+        data.addRows([
+          ['Mike',  {v: 10000, f: '$10,000'}, true],
+          ['Jim',   {v:8000,   f: '$8,000'},  false],
+          ['Alice', {v: 12500, f: '$12,500'}, true],
+          ['Bob',   {v: 7000,  f: '$7,000'},  true]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+    </script>
+    
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load("current", {packages:["corechart"]});
+     google.charts.setOnLoadCallback(drawChart);
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ['Age', 'Weight'],
+         [ 8,      12],
+         [ 4,      5.5],
+         [ 11,     14],
+         [ 4,      5],
+         [ 3,      3.5],
+         [ 6.5,    7]
+       ]);
+
+       var options = {
+         title: 'Age vs. Weight comparison',
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'exponential',
+             
+             visibleInLegend: true,
+               color: 'green',
+           }
+         }
+       };
+
+       var chart = new google.visualization.ScatterChart(document.getElementById('polynomial2_div'));
+       chart.draw(data, options);
+     }
+   </script>
+    
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Patients');
+
+      data.addRows([
+        [0, 0],   [1, 2396],  [2, 2564],  [3, 2952],  [4, 3656],  [5, 2971],
+        [6, 3062],  [7, 3344],  [8, 3339],  [9, 3175],  [10, 4311], [11, 3592],
+        [12, 3562], [13, 3726], [14, 3991], [15, 3808], [16, 4793], [17, 5049]
+        
+      ]);
+
+      var options = {   
+        hAxis: {
+          title: 'Day'
+        },
+        vAxis: {
+          title: 'Confirmed Cases'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div-1'));
+
+      chart.draw(data, options);
+    }
+    </script>
+      <script>
+        google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Patients');
+
+      data.addRows([
+        [0, 0],   [1, 1357],  [2, 1641],  [3, 1901],  [4, 2471],  [5, 1548],
+        [6, 2350],  [7, 1765],  [8, 2131],  [9, 1646],  [10, 2530], [11, 1932],
+        [12, 1537], [13, 1626], [14, 2300], [15, 1470], [16, 661] , [17, 2359]
+        
+      ]);
+
+      var options = {   
+        hAxis: {
+          title: 'Day'
+        },
+        vAxis: {
+          title: 'Active Cases'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div-2'));
+
+      chart.draw(data, options);
+    }
+    </script>
+      <script>
+        google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Patients');
+
+      data.addRows([
+        [0, 0],   [1, 962],  [2, 831],  [3, 911],  [4, 1082],  [5, 1295],
+        [6, 1161],  [7, 1475],  [8, 1111],  [9, 1414],  [10, 1669], [11, 1579],
+        [12, 1905], [13, 1963], [14, 1594], [15, 2234], [16, 4012] , [17, 2538]
+        
+      ]);
+
+      var options = {   
+        hAxis: {
+          title: 'Day'
+        },
+        vAxis: {
+          title: 'Recoveries'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div-3'));
+
+      chart.draw(data, options);
+    }
+    </script>
+      <script>
+        google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Patients');
+
+      data.addRows([
+        [0, 0],   [1, 77],  [2, 92],  [3, 140],  [4, 103],  [5, 128],
+        [6, 91],  [7, 104],  [8, 97],  [9, 115],  [10, 112], [11, 81],
+        [12, 120], [13, 137], [14, 97], [15, 104], [16, 120], [17, 152] 
+        
+      ]);
+
+      var options = {   
+        hAxis: {
+          title: 'Day'
+        },
+        vAxis: {
+          title: 'Deaths'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div-4'));
+
+      chart.draw(data, options);
+    }
+    </script>
+     
+     <title>Dashboard</title>
+    </head>
+    <body>
+    <section id="header">
+<div class="header-text">
+<h1>  Fighting towards a better tomorrow <br> COVID-19</h1>
+<span class="square"></span>
+<span class="square-1"></span>
+<span class="square-2"></span>
+<span class="square-3"></span>
+<p>The world is at it's knees still we will fight and win over COVID-19 and bounce back stronger than before.</p>
+
+
+
+</div>
+        </section>
+        <nav id="sideNav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="http://new-drupaal.dd:8083/">Serve India</a></li>
+            <li><a href="#worldtrack">World Live Tracker</a></li>
+            <li><a href="#indiatrack">India Cases Tracker</a></li>
+            <li><a href="payment.html">Donation</a></li>
+            <li><a href="https://telegram.me/covid_dash_bot">Assistance</a></li>
+            <li><a href="svg-hackathon.html">Thank-You</a></li>
+            </ul>
+        </nav>
+         <button  id="menuBtn" >  &#9776;</button>
+        
+        <script>
+             var menuBtn = document.getElementById("menuBtn");
+             var sideNav = document.getElementById("sideNav");
+            sideNav.style.left = "-250px";
+            menuBtn.onclick = function(){
+                if(sideNav.style.left == "-250px"){
+                    sideNav.style.left = "0";
+                }
+                else{
+                    sideNav.style.left = "-250px";
+                }
+            }
+        </script>
+        <nav id="contact">
+        <ul>
+           <li><a href="#"><i class="fa fa-facebook" ></i></a></li>
+           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+           <li><a href="#"><i class="fa fa-google"></i></a></li>
+           <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+           <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
+        </nav>
+        <button  id="openBtn" >  &#x2709;</button>
+        <script>
+        var openbtn = document.getElementById("openBtn");
+        var contact = document.getElementById("contact");
+            contact.style.right = "-250px";
+            openBtn.onclick = function(){
+                if(  contact.style.right == "-250px"){
+                      contact.style.right = "0";
+                }
+                else{
+                      contact.style.right = "-250px"
+                }
+            }
+        </script>
+        <section id="about">
+        <div class="about-left-col">
+            <div data-aos="fade-right">
+        <img src="Fight.jpg">
+        </div>
+            </div>
+            <div class="about-right-col">
+            <div class="about-right-col">
+                 <div data-aos="fade-left">
+                <h1>Our Fight<br>
+                  Against a Invisible Enemy
+                </h1>
+                <p>“When the entire world is battling this pandemic, in future whenever this war with the pandemic will be discussed, its events recalled, I am confident that India’s people-driven war will surely be discussed”
+                     <br>
+                     In every nook and corner of the country, people have come forward to help each other. From feeding the poor to arranging ration, observing lockdown, manning hospitals to indigenous production of medical equipment, the entire country is marching hand -in- hand in one direction towards one goal</p>
+                </div>
+                </div>
+            </div>
+        </section >
+        <section class="symptoms">
+        <div class="container-carousel">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+    <!-- Indicators -->
+      
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        
+      <div class="item active">
+          
+        <img src="corona.jpg" alt="Los Angeles" style="width:100%;height:100vh;">
+         
+          <div class="carousel-caption">
+             
+         
+         
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="sympt.jpg" alt="Chicago" style="width:100%; height:100vh;">
+          <div class="carousel-caption">
+         
+          
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="do.jpg" alt="New york" style="width:100%;height:100vh;">
+          <div class="carousel-caption">
+        
+          
+        </div>
+      </div>
+        
+        <div class="item">
+        <img src="Distancing.jpg" alt="New york" style="width:100%;height:100vh;">
+          <div class="carousel-caption">
+         
+       
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+            
+        </section>
+        <section id="Thank-You">
+        <div class="about-left-col">
+             <div data-aos="fade-right">
+        <img src="Thanks.jpg">
+        </div>
+            </div>
+            <div class="about-right-col">
+            <div class="about-right-col">
+                 <div data-aos="fade-left">
+                <h1>Thank-You<br>
+                  We all Thankyou for your efforts
+                </h1>
+                <p>As COVID-19 continues to impact communities around the world, people are coming together to help one another now more than ever. We’re launching a Doodle series to recognize and honor many of those on the front lines. Shouts and applause are ringing out in many locked-down cities, and social media is being flooded with messages of support for those braving the outbreak to help others.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+          <section class="graphs" id="worldtrack">
+             <div id="regions_div" style="width: 900px; height: 500px;"></div>
+        </section>
+        <section class="pie">
+        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+        </section>
+        <section class="daily">
+          <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        </section>
+        <section class="states-india" id="indiatrack">
+            
+        <div id="visualization" style="margin: 1em"> </div>
+        </section>
+       
+        <section class="live-update">
+        <div id="chart_div-1"></div>
+        </section>
+        <section class="live-update-1">
+        <div id="chart_div-2"></div>
+        </section>
+        <section class="live-update-2">
+        <div id="chart_div-3"></div>
+        </section>
+        <section class="live-update-3">
+        <div id="chart_div-4"></div>
+        </section>
+        
+               <script>
+  AOS.init({
+      duration: 2000,
+      offset: 200,
+  });
+</script>
+        
+    <footer>
+        <p> Copyright &copy;. All rights reserved. <br> Serve India</p>
+        
+        </footer>     
+        
+    </body>
+</html>
