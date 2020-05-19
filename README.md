@@ -9,6 +9,9 @@ Tools used:
 
 
 HTML5
+
 CSS3
+
 BootStrap
+
 JavaScript
