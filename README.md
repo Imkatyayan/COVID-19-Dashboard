@@ -8,6 +8,7 @@ The dashboard will give the us a better idea and a transparent statistics of the
 Tools used:
 
 
-HTML, CSS, BootStrap
-Drupal 8
+HTML5
+CSS3
+BootStrap
 JavaScript
